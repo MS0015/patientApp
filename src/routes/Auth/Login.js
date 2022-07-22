@@ -1,15 +1,5 @@
-import {
-  Text,
-  Center,
-  Button,
-  Stack,
-  Input,
-  Icon,
-  HStack,
-  View,
-  VStack,
-} from 'native-base';
-import React, {useState} from 'react';
+import { Text, Center, Button, Stack, Input, Icon, HStack, VStack } from 'native-base';
+import React, { useState } from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import GButton from '../../comp/GButton';
@@ -25,15 +15,15 @@ function Login() {
         <Button
           width="36%"
           leftIcon={<Icon as={<AntDesign name="google" />} size={5} ml="2" />}
-          colorScheme="red">
+          colorScheme="red"
+        >
           Google
         </Button>
         <Button
           width="36%"
-          leftIcon={
-            <Icon as={<AntDesign name="facebook-square" />} size={5} ml="2" />
-          }
-          colorScheme="blue">
+          leftIcon={<Icon as={<AntDesign name="facebook-square" />} size={5} ml="2" />}
+          colorScheme="blue"
+        >
           Facebook
         </Button>
       </HStack>
@@ -48,12 +38,7 @@ function Login() {
             md: '25%',
           }}
           InputLeftElement={
-            <Icon
-              as={<MaterialIcons name="person" />}
-              size={5}
-              ml="2"
-              color="muted.400"
-            />
+            <Icon as={<MaterialIcons name="person" />} size={5} ml="2" color="muted.400" />
           }
           placeholder="E-mail"
         />
@@ -64,18 +49,11 @@ function Login() {
           }}
           type={show ? 'text' : 'password'}
           InputLeftElement={
-            <Icon
-              as={<MaterialIcons name="lock" />}
-              size={5}
-              ml="2"
-              color="muted.400"
-            />
+            <Icon as={<MaterialIcons name="lock" />} size={5} ml="2" color="muted.400" />
           }
           InputRightElement={
             <Icon
-              as={
-                <MaterialIcons name={show ? 'visibility' : 'visibility-off'} />
-              }
+              as={<MaterialIcons name={show ? 'visibility' : 'visibility-off'} />}
               size={5}
               mr="2"
               color="muted.400"
