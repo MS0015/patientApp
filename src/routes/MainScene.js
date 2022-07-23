@@ -1,13 +1,15 @@
-import React, {Component} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import React, { Component } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import {Text, View} from 'native-base';
+import { Text, View } from 'native-base';
 import Login from './Auth/Login';
 import OnBoard from './Auth/OnBoard';
 import ForgotPassword from './Auth/ForgotPassword';
+import OTPVerification from './Auth/OTPVerification';
+import ResetPassword from './Auth/ResetPassword';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -22,7 +24,7 @@ function Home() {
       <Tab.Screen
         name="Feed"
         component={BlankView}
-        options={({route}) => ({
+        options={({ route }) => ({
           headerTitle: () => <Text />,
           // headerLeft: () => <HeaderLeft />,
           tabBarLabel: () => (
@@ -30,15 +32,13 @@ function Home() {
               Feed
             </Text>
           ),
-          tabBarIcon: ({color, size}) => (
-            <Feather name="grid" color={color} size={size} />
-          ),
+          tabBarIcon: ({ color, size }) => <Feather name="grid" color={color} size={size} />,
         })}
       />
       <Tab.Screen
         name="Orders"
         component={BlankView}
-        options={({route}) => ({
+        options={({ route }) => ({
           headerTitle: () => <Text>{route.name}</Text>,
           // headerLeft: () => <HeaderLeft />,
           // headerRight: () => <HeaderRight />,
@@ -47,9 +47,7 @@ function Home() {
               Orders
             </Text>
           ),
-          tabBarIcon: ({color, size}) => (
-            <Feather name="grid" color={color} size={size} />
-          ),
+          tabBarIcon: ({ color, size }) => <Feather name="grid" color={color} size={size} />,
           tabBarBadge: 2,
         })}
       />
@@ -65,9 +63,7 @@ function Home() {
               Earnings
             </Text>
           ),
-          tabBarIcon: ({color, size}) => (
-            <FontAwesome name="bank" color={color} size={size} />
-          ),
+          tabBarIcon: ({ color, size }) => <FontAwesome name="bank" color={color} size={size} />,
         }}
       />
       <Tab.Screen
@@ -83,9 +79,7 @@ function Home() {
               Wallet
             </Text>
           ),
-          tabBarIcon: ({color, size}) => (
-            <FontAwesome name="money" color={color} size={size} />
-          ),
+          tabBarIcon: ({ color, size }) => <FontAwesome name="money" color={color} size={size} />,
         }}
       />
       <Tab.Screen
@@ -99,9 +93,7 @@ function Home() {
               More
             </Text>
           ),
-          tabBarIcon: ({color, size}) => (
-            <Feather name="grid" color={color} size={size} />
-          ),
+          tabBarIcon: ({ color, size }) => <Feather name="grid" color={color} size={size} />,
         }}
       />
     </Tab.Navigator>
@@ -118,23 +110,33 @@ export default class MainScene extends Component {
           <Stack.Screen
             name="OnBoard"
             component={OnBoard}
-            options={{headerShown: false, headerStyle: {elevation: 0}}}
+            options={{ headerShown: false, headerStyle: { elevation: 0 } }}
           />
           <Stack.Screen
             name="Login"
             component={Login}
-            options={{headerShown: false, headerStyle: {elevation: 0}}}
+            options={{ headerShown: false, headerStyle: { elevation: 0 } }}
           />
           <Stack.Screen
             name="ForgotPassword"
             component={ForgotPassword}
-            options={{headerShown: false, headerStyle: {elevation: 0}}}
+            options={{ headerShown: false, headerStyle: { elevation: 0 } }}
+          />
+          <Stack.Screen
+            name="OTPVerification"
+            component={OTPVerification}
+            options={{ headerShown: false, headerStyle: { elevation: 0 } }}
+          />
+          <Stack.Screen
+            name="ResetPassword"
+            component={ResetPassword}
+            options={{ headerShown: false, headerStyle: { elevation: 0 } }}
           />
 
           <Stack.Screen
             name="Home"
             component={Home}
-            options={{headerShown: false, headerStyle: {elevation: 0}}}
+            options={{ headerShown: false, headerStyle: { elevation: 0 } }}
           />
         </Stack.Navigator>
       </NavigationContainer>

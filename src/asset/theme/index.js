@@ -1,5 +1,5 @@
-import {extendTheme} from 'native-base';
-import {s, vs, ms, mvs} from 'react-native-size-matters';
+import { extendTheme } from 'native-base';
+import { s, vs, ms, mvs } from 'react-native-size-matters';
 
 export const theme = extendTheme({
   config: {
@@ -64,9 +64,9 @@ export const theme = extendTheme({
     titleText: 'NeoSansTR',
   },
 
-  //Comp default style config
+  // Comp default style config
   components: {
-    //Button
+    // Button
     Button: {
       baseStyle: {},
       defaultProps: {
@@ -75,7 +75,7 @@ export const theme = extendTheme({
         },
       },
     },
-    //Badge
+    // Badge
     Badge: {
       baseStyle: {},
       defaultProps: {
@@ -84,7 +84,7 @@ export const theme = extendTheme({
         },
       },
     },
-    //Text
+    // Text
     Text: {
       baseStyle: {},
       defaultProps: {},

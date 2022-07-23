@@ -1,12 +1,32 @@
-import {Text, View} from 'react-native';
-import React, {Component} from 'react';
+import { Text, Center, Stack, Input, Icon } from 'native-base';
+import React from 'react';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { useNavigation } from '@react-navigation/native';
+import GButton from '../../comp/GButton';
 
-export default class ForgotPassword extends Component {
-  render() {
-    return (
-      <View>
-        <Text>ForgotPassword</Text>
-      </View>
-    );
-  }
+function ForgotPassword() {
+  const navigation = useNavigation();
+  return (
+    <Center justifyContent="center" flex={1}>
+      <Text variant="mainTitle">Forgot password</Text>
+      <Text variant="desc">We will send you verification code to your email</Text>
+
+      <Stack w="100%" alignItems="center" mb={3} mt={3}>
+        <Input
+          w={{
+            base: '75%',
+            md: '25%',
+          }}
+          InputLeftElement={
+            <Icon as={<MaterialIcons name="person" />} size={5} ml="2" color="muted.400" />
+          }
+          placeholder="E-mail"
+        />
+      </Stack>
+
+      <GButton label="Continue" w="75%" onPress={() => navigation.navigate('OTPVerification')} />
+    </Center>
+  );
 }
+
+export default ForgotPassword;

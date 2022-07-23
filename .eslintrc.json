@@ -26,6 +26,12 @@
   
       "react/no-unstable-nested-components": ["error", { "allowAsProps": true }],
   
+      "react/prefer-stateless-function": [0, { "ignorePureComponents": 1 }],
+
+      "import/no-extraneous-dependencies": ["error",  {"devDependencies": true}],
+      
+      "react/jsx-props-no-spreading": "off",
+
       // ignore global import
       "global-require": 0
     }

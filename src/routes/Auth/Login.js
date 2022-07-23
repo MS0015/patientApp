@@ -2,9 +2,13 @@ import { Text, Center, Button, Stack, Input, Icon, HStack, VStack } from 'native
 import React, { useState } from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import { TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import GButton from '../../comp/GButton';
 
 function Login() {
+  const navigation = useNavigation();
+
   const [show, setShow] = useState(false);
   return (
     <Center justifyContent="center" flex={1}>
@@ -67,9 +71,11 @@ function Login() {
       <GButton label="Login" w="75%" />
 
       <VStack alignItems="center" mt={3}>
-        <Text variant="desc" color="blue.700">
-          Forgot password
-        </Text>
+        <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
+          <Text variant="desc" color="blue.700">
+            Forgot password
+          </Text>
+        </TouchableOpacity>
         <Text variant="desc" color="blue.700">
           Don't have account? Join with us.
         </Text>
