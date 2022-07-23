@@ -17,7 +17,7 @@ function OnBoard() {
       />
       <GButton label="Login" onPress={() => navigation.navigate('Login')} />
 
-      <Button variant="outline" width="80%" m={1}>
+      <Button variant="outline" width="80%" m={1} onPress={() => navigation.navigate('Signup')}>
         <Text variant="mainTitle" color="#0452E5">
           Signup
         </Text>

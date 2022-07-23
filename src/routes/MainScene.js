@@ -10,6 +10,7 @@ import OnBoard from './Auth/OnBoard';
 import ForgotPassword from './Auth/ForgotPassword';
 import OTPVerification from './Auth/OTPVerification';
 import ResetPassword from './Auth/ResetPassword';
+import Signup from './Auth/Signup';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -130,6 +131,12 @@ export default class MainScene extends Component {
           <Stack.Screen
             name="ResetPassword"
             component={ResetPassword}
+            options={{ headerShown: false, headerStyle: { elevation: 0 } }}
+          />
+
+          <Stack.Screen
+            name="Signup"
+            component={Signup}
             options={{ headerShown: false, headerStyle: { elevation: 0 } }}
           />
 
