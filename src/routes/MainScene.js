@@ -11,6 +11,7 @@ import ForgotPassword from './Auth/ForgotPassword';
 import OTPVerification from './Auth/OTPVerification';
 import ResetPassword from './Auth/ResetPassword';
 import Signup from './Auth/Signup';
+import Feature from './Feature';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -21,18 +22,13 @@ function BlankView() {
 
 function Home() {
   return (
-    <Tab.Navigator initialRouteName="More">
+    <Tab.Navigator initialRouteName="Feed">
       <Tab.Screen
         name="Feed"
-        component={BlankView}
+        component={Feature}
         options={({ route }) => ({
-          headerTitle: () => <Text />,
-          // headerLeft: () => <HeaderLeft />,
-          tabBarLabel: () => (
-            <Text variant="title" fontSize="sm">
-              Feed
-            </Text>
-          ),
+          headerShown: false,
+          tabBarShowLabel: false,
           tabBarIcon: ({ color, size }) => <Feather name="grid" color={color} size={size} />,
         })}
       />
@@ -41,13 +37,8 @@ function Home() {
         component={BlankView}
         options={({ route }) => ({
           headerTitle: () => <Text>{route.name}</Text>,
-          // headerLeft: () => <HeaderLeft />,
-          // headerRight: () => <HeaderRight />,
-          tabBarLabel: () => (
-            <Text variant="title" fontSize="sm">
-              Orders
-            </Text>
-          ),
+          headerShown: false,
+          tabBarShowLabel: false,
           tabBarIcon: ({ color, size }) => <Feather name="grid" color={color} size={size} />,
           tabBarBadge: 2,
         })}
@@ -56,14 +47,8 @@ function Home() {
         name="Earnings"
         component={BlankView}
         options={{
-          headerTitle: () => <Text />,
-          // headerLeft: () => <HeaderLeft />,
-          // headerRight: () => <HeaderRight />,
-          tabBarLabel: () => (
-            <Text variant="title" fontSize="sm">
-              Earnings
-            </Text>
-          ),
+          headerShown: false,
+          tabBarShowLabel: false,
           tabBarIcon: ({ color, size }) => <FontAwesome name="bank" color={color} size={size} />,
         }}
       />
@@ -71,15 +56,8 @@ function Home() {
         name="Wallet"
         component={BlankView}
         options={{
-          // headerTitle: () => <Text></Text>,
-          // headerLeft: () => <HeaderLeft />,
-          // headerRight: () => <HeaderRight />,
           headerShown: false,
-          tabBarLabel: () => (
-            <Text variant="title" fontSize="sm">
-              Wallet
-            </Text>
-          ),
+          tabBarShowLabel: false,
           tabBarIcon: ({ color, size }) => <FontAwesome name="money" color={color} size={size} />,
         }}
       />
@@ -87,13 +65,8 @@ function Home() {
         name="More"
         component={BlankView}
         options={{
-          headerTitle: () => <Text />,
-          // headerLeft: () => <HeaderLeft />,
-          tabBarLabel: () => (
-            <Text variant="title" fontSize="sm">
-              More
-            </Text>
-          ),
+          headerShown: false,
+          tabBarShowLabel: false,
           tabBarIcon: ({ color, size }) => <Feather name="grid" color={color} size={size} />,
         }}
       />
@@ -105,7 +78,7 @@ export default class MainScene extends Component {
   render() {
     return (
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="Home">
           {/* <Stack.Screen name="Splash" component={Splash} /> */}
           {/* Auth */}
           <Stack.Screen
