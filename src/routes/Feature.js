@@ -1,16 +1,17 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ScrollView, Text, VStack } from 'native-base';
+import { HStack, ScrollView, Text, VStack } from 'native-base';
 import UserMainHeader from '../comp/UserMainHeader';
 import CategoryCard from '../comp/CategoryCard';
+import DoctorCard from '../comp/DoctorCard';
 
 export default function Feature() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
+      <UserMainHeader />
       <ScrollView bg="gray.100">
-        <UserMainHeader />
         <VStack m={2} space={3}>
-          <Text variant={'mainTitle'}>Categories</Text>
+          <Text variant="mainTitle">Categories</Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <CategoryCard
               label="Heart"
@@ -41,6 +42,21 @@ export default function Feature() {
               imgUrl="https://firebasestorage.googleapis.com/v0/b/patientapp-3debf.appspot.com/o/patientApp%2Fbrain.png?alt=media&token=fa319d3c-e191-45e0-979d-61b3b859280a"
             />
           </ScrollView>
+        </VStack>
+
+        <VStack m={2} space={3}>
+          <HStack justifyContent="space-between" alignItems="center">
+            <Text variant="mainTitle">Feature Doctor</Text>
+            <Text variant="desc" color="gray.400">
+              See all{'>'}{' '}
+            </Text>
+          </HStack>
+          <DoctorCard />
+          <DoctorCard />
+          <DoctorCard />
+          <DoctorCard />
+          <DoctorCard />
+          <DoctorCard />
         </VStack>
       </ScrollView>
     </SafeAreaView>
