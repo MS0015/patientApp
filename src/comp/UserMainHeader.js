@@ -9,7 +9,7 @@ export default function UserMainHeader() {
         <View m={5}>
           <HStack justifyContent="space-between" alignItems="center">
             <HStack space={3}>
-              <Avatar size="lg" />
+              <Avatar size="lg" source={require('../asset/img/dr.jpg')} />
               <VStack>
                 <Text variant="title">Hi Mathusuthan</Text>
                 <Text variant="mainTitle">Find Your Doctor</Text>
@@ -24,10 +24,10 @@ export default function UserMainHeader() {
           InputLeftElement={
             <Icon as={<FontAwesome name="search" />} size={7} ml="2" color="muted.400" />
           }
-          placeholder={'Search.....'}
+          placeholder="Search....."
           w="90%"
           variant="filled"
-          bgColor={'white'}
+          bgColor="white"
         />
       </View>
     </View>

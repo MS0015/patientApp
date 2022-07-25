@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import { Text, View } from 'native-base';
+import { Image, Text, View } from 'native-base';
 import Login from './Auth/Login';
 import OnBoard from './Auth/OnBoard';
 import ForgotPassword from './Auth/ForgotPassword';
@@ -29,7 +29,15 @@ function Home() {
         options={({ route }) => ({
           headerShown: false,
           tabBarShowLabel: false,
-          tabBarIcon: ({ color, size }) => <Feather name="grid" color={color} size={size} />,
+          tabBarIcon: ({ color, size }) => (
+            <Image
+              source={require('../asset/img/heart.png')}
+              alt="Icon"
+              size={size + 10}
+              tintColor={color}
+              resizeMode="contain"
+            />
+          ),
         })}
       />
       <Tab.Screen
@@ -39,7 +47,15 @@ function Home() {
           headerTitle: () => <Text>{route.name}</Text>,
           headerShown: false,
           tabBarShowLabel: false,
-          tabBarIcon: ({ color, size }) => <Feather name="grid" color={color} size={size} />,
+          tabBarIcon: ({ color, size }) => (
+            <Image
+              source={require('../asset/img/cal.png')}
+              alt="Icon"
+              size={size + 10}
+              tintColor={color}
+              resizeMode="contain"
+            />
+          ),
           tabBarBadge: 2,
         })}
       />
@@ -49,7 +65,15 @@ function Home() {
         options={{
           headerShown: false,
           tabBarShowLabel: false,
-          tabBarIcon: ({ color, size }) => <FontAwesome name="bank" color={color} size={size} />,
+          tabBarIcon: ({ color, size }) => (
+            <Image
+              source={require('../asset/img/ddd.png')}
+              alt="Icon"
+              size={size + 10}
+              tintColor={color}
+              resizeMode="contain"
+            />
+          ),
         }}
       />
       <Tab.Screen
@@ -58,7 +82,15 @@ function Home() {
         options={{
           headerShown: false,
           tabBarShowLabel: false,
-          tabBarIcon: ({ color, size }) => <FontAwesome name="money" color={color} size={size} />,
+          tabBarIcon: ({ color, size }) => (
+            <Image
+              source={require('../asset/img/noti.png')}
+              alt="Icon"
+              size={size + 10}
+              tintColor={color}
+              resizeMode="contain"
+            />
+          ),
         }}
       />
       <Tab.Screen
@@ -67,7 +99,15 @@ function Home() {
         options={{
           headerShown: false,
           tabBarShowLabel: false,
-          tabBarIcon: ({ color, size }) => <Feather name="grid" color={color} size={size} />,
+          tabBarIcon: ({ color, size }) => (
+            <Image
+              source={require('../asset/img/user.png')}
+              alt="Icon"
+              size={size + 10}
+              tintColor={color}
+              resizeMode="contain"
+            />
+          ),
         }}
       />
     </Tab.Navigator>
