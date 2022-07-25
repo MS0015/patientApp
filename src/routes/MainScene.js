@@ -12,6 +12,7 @@ import OTPVerification from './Auth/OTPVerification';
 import ResetPassword from './Auth/ResetPassword';
 import Signup from './Auth/Signup';
 import Feature from './Feature';
+import Drawer from './Drawer';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -153,10 +154,22 @@ export default class MainScene extends Component {
             options={{ headerShown: false, headerStyle: { elevation: 0 } }}
           />
 
+          {/* Main tab routes */}
           <Stack.Screen
             name="Home"
             component={Home}
             options={{ headerShown: false, headerStyle: { elevation: 0 } }}
+          />
+
+          {/* Drawer Routes */}
+          <Stack.Screen
+            name="Drawer"
+            component={Drawer}
+            options={{
+              headerShown: false,
+              headerStyle: { elevation: 0 },
+              animation: 'slide_from_right',
+            }}
           />
         </Stack.Navigator>
       </NavigationContainer>
