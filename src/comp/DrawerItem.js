@@ -2,8 +2,9 @@ import { HStack, Text } from 'native-base';
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import PropTypes from 'prop-types';
 
-export default function DrawerItem({ label }) {
+export default function DrawerItem({ label, onPress, icon }) {
   return (
     <TouchableOpacity>
       <HStack justifyContent="space-between">
@@ -19,3 +20,14 @@ export default function DrawerItem({ label }) {
     </TouchableOpacity>
   );
 }
+
+DrawerItem.propTypes = {
+  label: PropTypes.string,
+  icon: PropTypes.string,
+  onPress: PropTypes.func,
+};
+DrawerItem.defaultProps = {
+  label: '',
+  icon: '',
+  onPress: () => {},
+};

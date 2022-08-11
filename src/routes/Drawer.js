@@ -38,7 +38,7 @@ export default function Drawer({ navigation }) {
             </VStack>
           </TouchableOpacity>
         </HStack>
-        <VStack justifyContent={'space-between'} flex={1}>
+        <VStack justifyContent="space-between" flex={1}>
           <VStack mt={5}>
             <DrawerItem label="Pharmacies" />
             <DrawerItem label="My Orders" />

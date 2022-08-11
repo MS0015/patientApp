@@ -13,6 +13,7 @@ import ResetPassword from './Auth/ResetPassword';
 import Signup from './Auth/Signup';
 import Feature from './Feature';
 import Drawer from './Drawer';
+import Appointments from './Appointments';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -42,10 +43,9 @@ function Home() {
         })}
       />
       <Tab.Screen
-        name="Orders"
-        component={BlankView}
+        name="Appointments"
+        component={Appointments}
         options={({ route }) => ({
-          headerTitle: () => <Text>{route.name}</Text>,
           headerShown: false,
           tabBarShowLabel: false,
           tabBarIcon: ({ color, size }) => (
